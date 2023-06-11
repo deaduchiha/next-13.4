@@ -1,5 +1,9 @@
 const Products = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
+  //   fetch('/url',{cache:'force-cache'}) ==> default catch => SSG
+  //   fetch("/url", { next: { revalidate: 10 } }); ==> ISR
+  //   fetch('/url',{cache:'no-store'}) ==> for change it to SSR
+
   const data = await res.json();
 
   console.log(data);
